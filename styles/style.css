@@ -17,8 +17,10 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
   font-family: var(--Inter-Variable);
-  /*Не помню точно, нужно проверить*/
   font-variation-settings: 'wght' var(--font-weight-page);
   background-color: var(--bg-color);
   background-image: 
@@ -28,4 +30,64 @@
   background-attachment: fixed;
   background-size: cover;
   color: var(--accent-color);
+}
+
+.header {
+  margin: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: var(--PressStart2P);
+  font-size: 14px;
+  background-color: var(--bg-color);
+  border: var(--border);
+}
+
+.title {
+  margin-block-start: 120px;
+  margin-block-end: 20px;
+  font-size: 49px;
+}
+
+.tagline {
+  font-size: 14px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 25px auto;
+}
+
+.theme-menu__button {
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+}
+
+.card {
+  background-color: var(--bg-color);
+  border: var(--border);
+}
+
+.card__title {
+
+}
+
+.card__img {
+
+}
+
+.card__description {
+
+}
+
+.card__text {
+
+}
+
+.card__active {
+  
 }
