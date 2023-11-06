@@ -1,1 +1,13 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --Inter-Variable: 'Inter-Variable', sans-serif;
+  --PressStart2P: 'PressStart2P-Regular', monospace;
+  --font-weight-page: 400; /*толщина шрифта основного текста для светлой темы*/
+  --font-weight-title: 700; /*толщина шрифта заголовка для светлой темы*/
+  --bg-color: #fff;
+  --accent-color: #000;
+  --gradient-stripe-color: #d3d3d3;
+  --gradient-from-color: #e7e7e7;
+  --gradient-to-color: #1a1a1a;
+  --transparent-color: rgba(0 0 0 / 0);
+}

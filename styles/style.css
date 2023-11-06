@@ -17,4 +17,15 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--Inter-Variable);
+  /*Не помню точно, нужно проверить*/
+  font-variation-settings: 'wght' var(--font-weight-page);
+  background-color: var(--bg-color);
+  background-image: 
+    linear-gradient(var(--gradient-from-color) 0.01%, var(--gradient-to-color) 100%),
+    repeating-linear-gradient(var(--gradient-stripe-color), var(--transparent-color) 2px),
+    repeating-linear-gradient(90deg, var(--gradient-stripe-color), var(--transparent-color) 2px);
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--accent-color);
 }
