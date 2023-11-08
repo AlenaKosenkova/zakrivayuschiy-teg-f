@@ -11,4 +11,5 @@
   --gradient-to-color: #1a1a1a;
   --transparent-color: rgba(0 0 0 / 0);
   --border: 2px solid var(--accent-color);
+  --scrollbar-width: calc(100vw - 100%); /*ширины полосы прокрутки*/
 }

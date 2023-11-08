@@ -21,6 +21,7 @@
   max-width: 700px;
   margin: auto;
   font-family: var(--Inter-Variable);
+  font-size: 18px;
   font-variation-settings: 'wght' var(--font-weight-page);
   background-color: var(--bg-color);
   background-image: 
@@ -67,21 +68,38 @@
   border: none;
 }
 
+.section-cards {
+  display: flex;
+  gap: 50px;
+}
+
 .card {
+  display: flex;
+  flex-direction: column;
   background-color: var(--bg-color);
   border: var(--border);
 }
 
 .card__title {
-
+  padding: 5px 10px;
+  font-variation-settings: 'wght' var(--font-weight-title);
+  font-size: 18px;
 }
 
 .card__img {
+  border-block-start: var(--border);
+  border-block-end: var(--border);
 
+  width: calc(100vw - var(--scrollbar-width));
+  object-fit: contain;
+  object-position: center;
 }
 
 .card__description {
-
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  margin: 25px;
 }
 
 .card__text {
@@ -89,5 +107,24 @@
 }
 
 .card__active {
-  
+  display: flex;
+  gap: 5px;
+  align-self: end;
+  margin: 0 25px 25px 0;
+  font-family: var(--PressStart2P);
+  font-size: 14px;
+}
+
+.like-icon {
+  background-color: transparent;
+  border: none;
+  margin: auto;
+}
+
+.card__like-button {
+  background-color: transparent;
+  padding-inline: 37px;
+  padding-block: 12px;
+  border: none;
+  outline: var(--border);
 }
