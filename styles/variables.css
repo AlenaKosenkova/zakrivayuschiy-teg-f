@@ -6,6 +6,7 @@
   --font-weight-title: 700; /*толщина шрифта заголовка для светлой темы*/
   --bg-color: #fff;
   --accent-color: #000;
+  --accent-color-rgb: 0, 0, 0;
   --gradient-stripe-color: #d3d3d3;
   --gradient-from-color: #e7e7e7;
   --gradient-to-color: #1a1a1a;

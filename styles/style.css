@@ -56,16 +56,37 @@
 }
 
 .theme-menu__list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 14px;
   margin: 25px auto;
 }
 
+.theme-menu__item {
+  display: grid;
+  position: relative;
+  justify-content: start;
+  grid-template-columns: 14px auto;
+}
+
+.theme-menu__item:has(.theme-menu__button:disabled)::before {
+  content: '\25BA';
+  position: absolute;
+  grid-column: 1/2;
+  width: 14px;
+  height: 14px;
+  margin: auto;
+  color: rgb(var(--accent-color-rgb), 0.6);
+}
+
 .theme-menu__button {
+  grid-column: 2/3;
   text-transform: uppercase;
   background-color: transparent;
   border: none;
+}
+
+.theme-menu__button:disabled {
+  color: rgba(var(--accent-color-rgb), 0.6);
 }
 
 .section-cards {
