@@ -75,7 +75,22 @@
   width: 14px;
   height: 14px;
   margin: auto;
-  color: rgb(var(--accent-color-rgb), 0.6);
+  color: rgba(var(--accent-color-rgb), 0.6);
+  animation-name: arrow;
+  animation-duration: 0.5s;
+  animation-iteration-count:infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes arrow {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(4px, 0);
+  }
 }
 
 .theme-menu__button {
@@ -83,10 +98,35 @@
   text-transform: uppercase;
   background-color: transparent;
   border: none;
+  cursor: pointer;
+}
+
+.theme-menu__button::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background-color: rgba(var(--accent-color-rgb), 0.6);
+  transform: scale(0);
+}
+
+.theme-menu__button:focus-visible {
+  color: rgba(var(--accent-color-rgb), 0.6);
+  outline: none;
+}
+
+.theme-menu__button:focus-visible::after, .theme-menu__button:focus-visible {
+  transform-origin: left;
+  transform: scale(1);
+  transition: transform 0.3s, color 0.3s;
 }
 
 .theme-menu__button:disabled {
+  pointer-events: none;
+}
+
+.theme-menu__button:disabled, .theme-menu__button:hover {
   color: rgba(var(--accent-color-rgb), 0.6);
+  transition: color 0.3s ease;
 }
 
 .section-cards {
@@ -106,6 +146,33 @@
   font-variation-settings: 'wght' var(--font-weight-title);
   font-size: 18px;
 }
+
+.img__group {
+  position: relative;
+  display: flex;
+  justify-content: end;
+}
+
+.img__label {
+  position: absolute;
+  text-transform: uppercase;
+  font-family: var(--PressStart2P);
+  font-size: 14px;
+  color: rgba(var(--accent-color-rgb), 0.5);
+  margin-block-start: 25px;
+  margin-inline-end: 10px;
+  text-shadow: 1px rgba(var(--text-shadow), 0.5);
+  mix-blend-mode: hard-light;
+}
+
+@supports((text-stroke: 1px rgba(var(--text-shadow), 0.5)) or 
+(-webkit-text-stroke: 1px rgba(var(--text-shadow), 0.5))) {
+  .img__label {
+      -webkit-text-stroke: 1px rgba(var(--text-shadow), 0.5);
+      text-stroke: 1px rgba(var(--text-shadow), 0.5);
+      text-shadow: none;
+  }
+} 
 
 .card__img {
   border-block-start: var(--border);
