@@ -6,6 +6,7 @@
   --font-weight-title: 700; /*толщина шрифта заголовка для светлой темы*/
   --bg-color: #fff;
   --accent-color: #000;
+  --color-for-translete: var(--bg-color);
   --text-shadow: 255, 255, 255;
   --accent-color-rgb: 0, 0, 0;
   --gradient-stripe-color: #d3d3d3;
@@ -14,4 +15,7 @@
   --transparent-color: rgba(0 0 0 / 0);
   --border: 2px solid var(--accent-color);
   --scrollbar-width: calc(100vw - 100%); /*ширины полосы прокрутки*/
+
+  --heart-contour-color: var(--accent-color);
+  --heart-main-body-color: #FF0000;
 }

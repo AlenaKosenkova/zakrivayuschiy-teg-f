@@ -7,6 +7,7 @@
 :root.theme-light {
   --bg-color: #fff;
   --accent-color: #000;
+  --color-for-translete: var(--bg-color);
   --text-shadow: 255, 255, 255;
   --accent-color-rgb: 0, 0, 0;
   --font-weight-page: 400;
@@ -14,11 +15,14 @@
   --gradient-stripe-color: #d3d3d3;
   --gradient-from-color: #e7e7e7;
   --gradient-to-color: #1a1a1a;
+
+  --heart-contour-color: var(--accent-color);
 }
 
 :root.theme-dark {
   --bg-color: #000;
   --accent-color: #00CC14;
+  --color-for-translete: var(--accent-color);
   --text-shadow: 0, 0, 0;
   --accent-color-rgb: 0, 204, 20;
   --font-weight-page: 465;
@@ -26,12 +30,15 @@
   --gradient-stripe-color: #000;
   --gradient-from-color: #007f0c;
   --gradient-to-color: #004306;
+
+  --heart-contour-color: var(--accent-color);
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --bg-color: #fff;
     --accent-color: #000;
+    --color-for-translete: var(--bg-color);
     --text-shadow: 255, 255, 255;
     --accent-color-rgb: 0, 0, 0;
     --font-weight-page: 400;
@@ -39,6 +46,8 @@
     --gradient-stripe-color: #d3d3d3;
     --gradient-from-color: #e7e7e7;
     --gradient-to-color: #1a1a1a;
+
+    --heart-contour-color: var(--accent-color);
   }
 }
 
@@ -46,6 +55,7 @@
   :root {
     --bg-color: #000;
     --accent-color: #00CC14;
+    --color-for-translete: var(--accent-color);
     --text-shadow: 0, 0, 0;
     --accent-color-rgb: 0, 204, 20;
     --font-weight-page: 465;
@@ -53,5 +63,7 @@
     --gradient-stripe-color: #000;
     --gradient-from-color: #007f0c;
     --gradient-to-color: #004306;
+
+    --heart-contour-color: var(--accent-color);
   }
 }
