@@ -15,22 +15,21 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
   width: 100%;
   max-width: 700px;
   margin: auto;
+  color: var(--accent-color);
   font-family: var(--Inter-Variable);
   font-size: 18px;
-  font-variation-settings: 'wght' var(--font-weight-page);
-  background-color: var(--bg-color);
   background-image: 
-    linear-gradient(var(--gradient-from-color) 0.01%, var(--gradient-to-color) 100%),
     repeating-linear-gradient(var(--gradient-stripe-color), var(--transparent-color) 2px),
-    repeating-linear-gradient(90deg, var(--gradient-stripe-color), var(--transparent-color) 2px);
-  background-attachment: fixed;
+    repeating-linear-gradient(90deg, var(--gradient-stripe-color), var(--transparent-color) 2px),
+    linear-gradient(var(--gradient-from-color) 0.01%, var(--gradient-to-color) 100%);
   background-size: cover;
-  color: var(--accent-color);
+  background-attachment: fixed;
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  font-variation-settings: 'wght' var(--font-weight-page);
 }
 
 .header, .footer {
@@ -43,23 +42,25 @@
 
 .header {
   margin: 100px 0;
-  text-transform: uppercase;
   border: var(--border);
+  text-transform: uppercase;
   background-color: var(--bg-color);
 }
 
 .footer {
+  /*этот элемент не должен уменьшаться, что бы ни происходило*/
+  flex-shrink: 0;
   margin: 52px auto 100px auto;
 }
 
 .title {
   margin-block-start: 120px;
   margin-block-end: 20px;
-  font-size: 49px;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 
 .tagline {
-  font-size: 14px;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .theme-menu__list {
@@ -69,29 +70,29 @@
 }
 
 .theme-menu__item {
-  display: grid;
   position: relative;
-  justify-content: start;
+  display: grid;
   grid-template-columns: 14px auto;
+  justify-content: start;
 }
 
 .theme-menu__item:has(.theme-menu__button:disabled)::before {
-  content: '\25BA';
+  content: '▶';
   position: absolute;
   grid-column: 1/2;
   width: 14px;
   height: 14px;
   margin: auto;
-  font-size: 14px;
-  font-family: var(--PressStart2P);
   color: rgba(var(--accent-color-rgb), 0.6);
+  font-family: var(--PressStart2P);
+  font-size: 14px;
 }
 
 .theme-menu__button {
   grid-column: 2/3;
+  border: none;
   text-transform: uppercase;
   background-color: transparent;
-  border: none;
   cursor: pointer;
 }
 
@@ -104,38 +105,41 @@
 }
 
 .theme-menu__button:focus-visible {
-  color: rgba(var(--accent-color-rgb), 0.6);
   outline: none;
+  color: rgba(var(--accent-color-rgb), 0.6);
 }
 
 .theme-menu__button:focus-visible::after, .theme-menu__button:focus-visible {
-  transform-origin: left;
-  transform: scale(1);
   transition: transform 0.3s, color 0.3s;
+  transform: scale(1);
+  transform-origin: left;
 }
 
 .theme-menu__button:disabled {
-  pointer-events: none;
   color: rgba(var(--accent-color-rgb), 0.6);
   transition: color 0.3s ease;
+  pointer-events: none;
 }
 
-.section-cards {
+.main {
   display: flex;
+  flex-direction: column;
+  /*сновное содержимое (.main ) должно занимать все доступное место на экране.*/
+  flex: 1;
   gap: 50px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-color);
   border: var(--border);
+  background-color: var(--bg-color);
 }
 
 .card__title {
   padding: 5px 10px;
-  font-variation-settings: 'wght' var(--font-weight-title);
   font-size: 18px;
+  font-variation-settings: 'wght' var(--font-weight-title);
 }
 
 .img__group {
@@ -146,12 +150,13 @@
 
 .img__label {
   position: absolute;
-  text-transform: uppercase;
+  z-index: 1;
+  margin-inline-end: 10px;
+  margin-block-start: 25px;
+  color: rgba(var(--accent-color-rgb), 0.5);
   font-family: var(--PressStart2P);
   font-size: 14px;
-  color: rgba(var(--accent-color-rgb), 0.5);
-  margin-block-start: 25px;
-  margin-inline-end: 10px;
+  text-transform: uppercase;
   text-shadow: 1px rgba(var(--text-shadow), 0.5);
   mix-blend-mode: hard-light;
 }
@@ -159,26 +164,61 @@
 @supports((text-stroke: 1px rgba(var(--text-shadow), 0.5)) or 
 (-webkit-text-stroke: 1px rgba(var(--text-shadow), 0.5))) {
   .img__label {
+      text-shadow: none;
       -webkit-text-stroke: 1px rgba(var(--text-shadow), 0.5);
       text-stroke: 1px rgba(var(--text-shadow), 0.5);
-      text-shadow: none;
   }
 } 
 
 .card__img {
+  width: calc(100vw - var(--scrollbar-width));
   border-block-start: var(--border);
   border-block-end: var(--border);
-
-  width: calc(100vw - var(--scrollbar-width));
   object-fit: contain;
   object-position: center;
+}
+
+.img-bright {
+  filter: brightness(130%);
+}
+
+.img-contrast {
+  filter: contrast(110%);
+}
+
+.img-blur {
+  filter: blur(3px);
+}
+
+.img-gray {
+  filter: grayscale(90%);
+}
+
+.img-sepia {
+  filter: sepia(90%);
+}
+
+.img-saturate {
+  filter: saturate(150%);
+}
+
+.img-hue-rotate {
+  filter: hue-rotate(90deg);
+}
+
+.img-mix-filter {
+  filter: brightness(150%) saturate(30%) hue-rotate(5deg);
 }
 
 .card__description {
   display: flex;
   flex-direction: column;
   gap: 27px;
-  margin: 25px;
+  margin-block: 25px;
+}
+
+.card__text {
+  margin-inline: 25px;
 }
 
 .card__active {
@@ -191,19 +231,20 @@
 }
 
 .card__icon-button {
-  background-color: transparent;
-  border: none;
   margin: auto;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .card__like-button, 
-.memory__button, 
+.footer__button, 
 .dialog__close-button {
-  background-color: transparent;
   position: relative;
   border: none;
   outline: var(--border);
   overflow: hidden;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -212,17 +253,33 @@
   padding-block: 12px;
 }
 
-.memory__button {
+.footer__button {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-direction: row;
   align-items: center;
-  width: 306px;
+  gap: 8px;
+  width: auto;
   padding: 15px;
 }
 
+.footer__floppy {
+  max-inline-size: 21px;
+  max-block-size: 21px;
+}
+
+@media (width <= 375px) {
+  .footer__button {
+    flex-direction: column;
+  }
+
+  .footer__floppy {
+    max-inline-size: 28px;
+    max-block-size: 28px;
+  }
+}
+
 .button__text, 
-.memory__button-text, 
+.footer__button-text, 
 .floppy {
   position: relative;
   z-index: 1;
@@ -245,22 +302,27 @@
 
 
 .card__like-button::before, 
-.memory__button::before {
+.footer__button::before {
   content: '';
-  display: block;
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  display: block;
   width: 100%;
+  height: 100%;
   background-color: var(--accent-color);
-  transform: translate(-100%);
   transition: transform 0.5s ease-in-out;
+  transform: translate(-100%);
 }
 
 .core {
   fill: var(--bg-color);
   transition: fill 0.3s 0.3s;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--accent-color);
+  transition: fill 0.3s;
 }
 
 .card__icon-button:active .core {
@@ -271,6 +333,11 @@
 .main-body {
   fill: var(--bg-color);
   transition: fill 0.3s;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--accent-color);
+  transition: fill 0.3s 0.5s;
 }
 
 .card__icon-button:active .main-body {
@@ -288,6 +355,11 @@
   transition: fill 0.3s 0.3s;
 }
 
+.contour {
+  fill: var(--accent-color);
+  transition: fill 0.1s linear;
+}
+
 .like-icon.is-liked .contour {
   fill: var(--heart-main-body-color);
   transition: fill 0.3s 0.6s;
@@ -297,35 +369,35 @@
   opacity: 0;
 }
 
-.memory__button {
+.footer__button {
   background-color: var(--bg-color);
 }
 
 .dialog[open] {
-  filter: none;
   display: none;
   display: grid;
   grid-template-columns: 40px auto;
-  align-items: center;
   justify-content: center;
-  column-gap: 20px;
+  align-items: center;
   row-gap: 30px;
+  column-gap: 20px;
+  min-width: 257px;
+  max-width: 353px;
   padding: 30px 42px;
-  background-color: var(--bg-color);
   color: var(--accent-color);
+  background-color: var(--bg-color);
+  filter: none;
 }
 
 .dialog__floppy {
-  width: 40px;
-  height: 40px;
-  fill: var(--accent-color);
   grid-column: 1/2;
+  fill: var(--accent-color);
 }
 
 .dialog__text {
   grid-column: 2/3;
-  text-transform: uppercase;
   line-height: 21px;
+  text-transform: uppercase;
 }
 
 .dialog__close {
@@ -338,10 +410,10 @@
   cursor: pointer;
 }
 
-/*Подумать над этим*/
 .dialog::backdrop {
   background-color: rgb(0 0 0 / 0.75);
 }
+
 
 @media (hover: hover) {
   .theme-menu__button:hover {
@@ -349,18 +421,8 @@
     transition: color 0.3s ease;
   }
 
-  .card__like-button:hover::before, .memory__button:hover::before {
-    transform: translate(0);
+  .card__like-button:hover::before, .footer__button:hover::before {
     transition: transform 0.5s ease-in-out;
-  }
-
-  .card__icon-button:hover .core {
-    fill: var(--accent-color);
-    transition: fill 0.3s;
-  }
-
-  .card__icon-button:hover .main-body {
-    fill: var(--accent-color);
-    transition: fill 0.3s 0.5s;
+    transform: translate(0);
   }
 }
