@@ -2,19 +2,21 @@
 :root {
   /*ШРИФТЫ*/
   --Inter-Variable: 'Inter-Variable', sans-serif;
-  --PressStart2P: 'PressStart2P-Regular', monospace;
+  --PressStart2P: 'PressStart2P-Regular', fantasy;
   --font-weight-page: 400; /*толщина шрифта основного текста для светлой темы*/
   --font-weight-title: 700; /*толщина шрифта заголовка для светлой темы*/
   
-  /*ЦВЕТА*/
-  --bg-color: #fff;
-  --accent-color: #000;
-  --color-for-translete: var(--bg-color);
-  --text-shadow: 255, 255, 255;
-  --accent-color-rgb: 0, 0, 0;
-  --gradient-stripe-color: #d3d3d3;
-  --gradient-from-color: #e7e7e7;
-  --gradient-to-color: #1a1a1a;
+  --bg-color: #000;
+  --accent-color: #00CC14;
+  --color-for-translete: var(--accent-color);
+  --text-shadow: 0, 0, 0;
+  --accent-color-rgb: 0, 204, 20;
+  --font-weight-page: 465;
+  --font-weight-title: 785;
+  --gradient-stripe-color: #000;
+  --gradient-from-color: #007f0c;
+  --gradient-to-color: #004306;
+
   --transparent-color: rgba(0 0 0 / 0);
   --border: 2px solid var(--accent-color);
 

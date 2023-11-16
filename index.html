@@ -7,8 +7,6 @@
     <title>Закрывающий тег</title>
     <link rel="icon" href="./images/favicon/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="./images/favicon/favicon.png">
-    <link rel="" href="./svg/floppy.svg" type="image/svg+xml">
-    <!--<link rel="icon" href="./images/favicon/favicon.ico" sizes="any">-->
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
@@ -19,8 +17,8 @@
   </head>
   <body class="page">
     <header class="header">
-      <h1 class="title">&lt;/html&gt;</h1>
-      <h2 class="tagline">закрывающий тег</h2>
+      <a href="" class="logo">&lt;/html&gt;</a>
+      <h1 class="title">закрывающий тег</h1>
       <nav class="theme-menu header__theme-menu">
         <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
         <ul class="theme-menu__list">
@@ -49,7 +47,7 @@
     </header>
     <main class="main">
       <section class="card">
-        <h3 class="card__title">Фритрек и нулевой спринт: Подготовка к работе</h3>
+        <h2 class="card__title">Фритрек и нулевой спринт: Подготовка к работе</h2>
         <div class="img__group">
           <span class="img__label">&lt;start&gt;</span>
           <img class="card__img img-bright" 
@@ -102,7 +100,7 @@
         </div>
       </section>
       <section class="card">
-        <h3 class="card__title">1 спринт: Я — чистый лист</h3>
+        <h2 class="card__title">1 спринт: Я — чистый лист</h2>
         <div class="img__group">
           <span class="img__label">&lt;begin&gt;</span>
           <img class="card__img img-contrast" 
@@ -159,7 +157,7 @@
         </div>
       </section>
       <section class="card">
-        <h3 class="card__title">1 спринт: А если не получится?</h3>
+        <h2 class="card__title">1 спринт: А если не получится?</h2>
         <div class="img__group">
           <span class="img__label">&lt;css&gt;</span>
           <img class="card__img img-blur" 
@@ -213,7 +211,7 @@
         </div>
       </section>
       <section class="card">
-        <h3 class="card__title">2 спринт: Погоня за идеалом</h3>
+        <h2 class="card__title">2 спринт: Погоня за идеалом</h2>
         <div class="img__group">
           <span class="img__label">&lt;relax&gt;</span>
           <img class="card__img img-gray" 
@@ -268,7 +266,7 @@
         </div>
       </section>
       <section class="card">
-        <h3 class="card__title">2 спринт: О тех, кто рядом</h3>
+        <h2 class="card__title">2 спринт: О тех, кто рядом</h2>
         <div class="img__group">
           <span class="img__label">&lt;light&gt;</span>
           <img class="card__img img-sepia" 
@@ -322,7 +320,7 @@
         </div>
       </section>
       <section class="card">
-        <h3 class="card__title">3 спринт: Обходные стратегии</h3>
+        <h2 class="card__title">3 спринт: Обходные стратегии</h2>
         <div class="img__group">
           <span class="img__label">&lt;be strong&gt;</span>
           <img class="card__img img-saturate" 
@@ -373,7 +371,7 @@
         </div>
       </section>
       <section class="card">
-        <h3 class="card__title">3 спринт: Когда опускаются руки</h3>
+        <h2 class="card__title">3 спринт: Когда опускаются руки</h2>
         <div class="img__group">
           <span class="img__label">&lt;div&gt;</span>
           <img class="card__img img-hue-rotate" 
@@ -429,7 +427,7 @@
         </div>
       </section>
       <section class="card">
-        <h3 class="card__title">«Сейчас я здесь»</h3>
+        <h2 class="card__title">«Сейчас я здесь»</h2>
         <div class="img__group img-mix-filter">
           <span class="img__label">&lt;/html&gt;</span>
           <img class="card__img" 
@@ -496,25 +494,27 @@
             stroke="currentColor">
               <use href="./svg/floppy.svg#floppy"></use>
           </svg> 
-        <span class="footer__button-text">Сохранить на память</span>
+        <span class="button__text">Сохранить на память</span>
       </button>
-      <dialog id="dialog-id" class="dialog">
-          <svg class="floppy dialog__floppy"
-            width="40"
-            height="40"
-            viewBox="0 0 40 40"
-            fill="currentColor"
-            stroke="currentColor">
-              <use href="./svg/floppy.svg#floppy">
-          </svg> 
-          <span class="dialog__text">Вставьте дискету, чтобы продолжить</span>
-          <form method="dialog" class="dialog__close">
-            <button class="dialog__close-button">
-              OK
-            </button>
-          </form>
-      </dialog>
     <script src="./scripts/like.js"></script>
   </footer>
+  <dialog id="dialog-id" class="dialog">
+    <svg class="floppy dialog__floppy"
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="currentColor"
+      stroke="currentColor">
+        <use href="./svg/floppy.svg#floppy">
+    </svg> 
+    <span class="dialog__text">Вставьте дискету, чтобы продолжить</span>
+    <form method="dialog" class="dialog__close">
+      <button class="dialog__close-button">
+        <span class="button__text">
+          OK
+        </span>
+      </button>
+    </form>
+  </dialog>
   </body>
 </html>

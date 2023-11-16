@@ -50,20 +50,3 @@
     --heart-contour-color: var(--accent-color);
   }
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #000;
-    --accent-color: #00CC14;
-    --color-for-translete: var(--accent-color);
-    --text-shadow: 0, 0, 0;
-    --accent-color-rgb: 0, 204, 20;
-    --font-weight-page: 465;
-    --font-weight-title: 785;
-    --gradient-stripe-color: #000;
-    --gradient-from-color: #007f0c;
-    --gradient-to-color: #004306;
-
-    --heart-contour-color: var(--accent-color);
-  }
-}
