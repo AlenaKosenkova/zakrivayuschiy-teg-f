@@ -15,7 +15,7 @@
 .theme-menu__item:has(.theme-menu__button:disabled)::before {
   animation-name: arrow;
   animation-duration: 0.5s;
-  animation-iteration-count:infinite;
+  animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-direction: alternate-reverse;
 }

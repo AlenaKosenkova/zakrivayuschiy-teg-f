@@ -5,9 +5,9 @@
   --PressStart2P: 'PressStart2P-Regular', fantasy;
   --font-weight-page: 400; /*толщина шрифта основного текста для светлой темы*/
   --font-weight-title: 700; /*толщина шрифта заголовка для светлой темы*/
-  
+
   --bg-color: #000;
-  --accent-color: #00CC14;
+  --accent-color: #00cc14;
   --color-for-translete: var(--accent-color);
   --text-shadow: 0, 0, 0;
   --accent-color-rgb: 0, 204, 20;
@@ -23,5 +23,5 @@
   --scrollbar-width: calc(100vw - 100%); /*ширины полосы прокрутки*/
 
   --heart-contour-color: var(--accent-color);
-  --heart-main-body-color: #FF0000;
+  --heart-main-body-color: #ff0000;
 }
