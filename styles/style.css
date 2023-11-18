@@ -249,13 +249,9 @@
 .card__active {
   display: flex;
   align-self: end;
-  margin: 25px 25px 25px 0;
+  margin: 0 25px 25px 0;
   font-family: var(--PressStart2P, "PressStart2P-Regular", fantasy);
   font-size: 14px;
-}
-
-.card:last-child .card__active {
-  margin: 0 25px 25px 0;
 }
 
 .card__icon-button {
@@ -309,7 +305,8 @@
 }
 
 .card__like-button:focus-visible,
-.dialog__close-button:focus-visible {
+.dialog__close-button:focus-visible,
+.footer__button:focus-visible {
   box-shadow: 4px 4px 0 0 var(--accent-color, #00cc14);
   transition: box-shadow 0.3s ease;
 }
