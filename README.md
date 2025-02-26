@@ -1,5 +1,9 @@
 # zakrivayuschiy-teg-f
 Проект "Закрывающий тег f"
+
+## Для просмотра итогового варианта
+Введите на [сайте](https://htmlpreview.github.io/) ссылку https://github.com/AlenaKosenkova/zakrivayuschiy-teg-f/blob/main/index.html Нажмите кнопку Preview.
+
 ## Что было реализовано
 * настроена работа светлой и темной темы
 * добавлены фавиконы для разных тем
